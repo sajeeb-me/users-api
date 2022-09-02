@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "gender": "male",
+        "name": "Sajeeb",
+        "contact": "123456",
+        "address": "Sylhet,Bangladesh",
+        "photoUrl": "https://i.ibb.co/kGhpqK7/lamborghini.jpg"
+    },
+    {
+        "id": 2,
+        "gender": "male",
+        "name": "Das",
+        "contact": "123456",
+        "address": "Sylhet,Bangladesh",
+        "photoUrl": "https://i.ibb.co/1XhXNqn/ferrari.jpg"
+    },
+    {
+        "id": 3,
+        "gender": "female",
+        "name": "Sabana",
+        "contact": "123456",
+        "address": "Dhaka,Bangladesh",
+        "photoUrl": "https://i.ibb.co/dGDYQJG/mercedes.jpg"
+    },
+    {
+        "id": 4,
+        "gender": "female",
+        "name": "Jamila",
+        "contact": "123456",
+        "address": "Kulna,Bangladesh",
+        "photoUrl": "https://i.ibb.co/W3khdXM/mazda.jpg"
+    },
+    {
+        "id": 5,
+        "gender": "female",
+        "name": "Rahima",
+        "contact": "123456",
+        "address": "Barishal,Bangladesh",
+        "photoUrl": "https://i.ibb.co/7Qwt10x/porsche.jpg"
+    },
+    {
+        "id": 6,
+        "gender": "male",
+        "name": "Rahim",
+        "contact": "123456",
+        "address": "Cumilla,Bangladesh",
+        "photoUrl": "https://i.ibb.co/BB1tb1x/bmw.jpg"
+    },
+    {
+        "id": 7,
+        "gender": "female",
+        "name": "Jorina",
+        "contact": "123456",
+        "address": "Dhaka,Bangladesh",
+        "photoUrl": "https://i.ibb.co/kGhpqK7/lamborghini.jpg"
+    },
+    {
+        "id": 8,
+        "gender": "female",
+        "name": "Sokina",
+        "contact": "123456",
+        "address": "Chitagang,Bangladesh",
+        "photoUrl": "https://i.ibb.co/1610NN3/audi.jpg"
+    },
+    {
+        "id": 9,
+        "gender": "male",
+        "name": "Basir",
+        "contact": "123456",
+        "address": "Sylhet,Bangladesh",
+        "photoUrl": "https://i.ibb.co/JBc0ykT/bugatti.jpg"
+    },
+    {
+        "id": 10,
+        "gender": "female",
+        "name": "Bilkis",
+        "contact": "123456",
+        "address": "Sylhet,Bangladesh",
+        "photoUrl": "https://i.ibb.co/7Qwt10x/porsche.jpg"
+    }
+]
