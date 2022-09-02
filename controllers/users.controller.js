@@ -81,3 +81,39 @@ module.exports.saveRandomUser = (req, res) => {
     }
 }
 
+module.exports.updateUser = (req, res) => {
+    const { id } = req.params;
+    const updatedInfo = req.body;
+    if ('id' in updatedInfo) {
+        res.status(500).send({
+            success: false,
+            error: 'id is not changeable. Please remove the id.',
+        })
+    } else {
+        const selectedUser = users.find(user => user.id === Number(id));
+        let updateSelectedUser = {};
+        if (selectedUser) {
+            const restUser = users.filter(user => user.id !== Number(id));
+            updateSelectedUser = {
+                ...selectedUser,
+                ...updatedInfo,
+            }
+            const updatedUsers = [
+                ...restUser,
+                updateSelectedUser,
+            ]
+            res.status(200).send({
+                success: true,
+                message: `User updated successfully!`,
+                modifiedUser: updateSelectedUser,
+                data: updatedUsers,
+            });
+        } else {
+            res.status(500).send({
+                success: false,
+                error: "No user found.",
+            })
+        }
+    }
+}
+

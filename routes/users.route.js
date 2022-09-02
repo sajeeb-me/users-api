@@ -19,5 +19,9 @@ router
     .route('/save')
     .post(usersController.saveRandomUser);
 
+router
+    .route('/update/:id')
+    .patch(usersController.updateUser);
+
 
 module.exports = router;
