@@ -51,3 +51,33 @@ module.exports.getUserDetails = (req, res) => {
     }
 }
 
+module.exports.saveRandomUser = (req, res) => {
+    const randomUser = req.body;
+    const newId = users.reduce((maxId, user) => Math.max(user.id, maxId), 0) + 1;
+    const newUser = {
+        id: newId,
+        ...randomUser
+    }
+    if ('id' in randomUser) {
+        res.status(500).send({
+            success: false,
+            error: 'Please remove the id. id will be generated automatically.',
+        })
+    } else {
+        if (['gender', 'name', 'contact', 'address', 'photoUrl'].every(key => Object.keys(randomUser).includes(key))) {
+            users.push(newUser);
+            res.status(200).send({
+                success: true,
+                message: `A new user added successfully!`,
+                newUser,
+                data: users,
+            });
+        } else {
+            res.status(500).send({
+                success: false,
+                error: 'Please input all property',
+            })
+        }
+    }
+}
+

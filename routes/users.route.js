@@ -15,5 +15,9 @@ router
     .route('/:id')
     .get(usersController.getUserDetails);
 
+router
+    .route('/save')
+    .post(usersController.saveRandomUser);
+
 
 module.exports = router;
