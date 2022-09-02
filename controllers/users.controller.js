@@ -117,6 +117,30 @@ module.exports.updateUser = (req, res) => {
     }
 }
 
+module.exports.bulkUpdate = (req, res) => {
+    const body = req.body;
+    const key = 'id';
+    const result = users.map(user => {
+        const userFound = body.find(founded => founded[key] === user[key]);
+        if (userFound) {
+            if (['id', 'gender', 'name', 'contact', 'address', 'photoUrl'].every(key => Object.keys(userFound).includes(key))) {
+                user = Object.assign(user, userFound);
+            } else {
+                res.status(500).send({
+                    success: false,
+                    error: 'Please input all property',
+                })
+            }
+        }
+        return user;
+    })
+    res.status(200).send({
+        success: true,
+        message: `Bulk updated successfully!`,
+        data: result,
+    });
+}
+
 module.exports.deleteUser = (req, res) => {
     const { id } = req.params;
     const selectedUser = users.find(user => user.id === Number(id));
@@ -136,4 +160,3 @@ module.exports.deleteUser = (req, res) => {
     }
 
 }
-

@@ -24,6 +24,10 @@ router
     .patch(usersController.updateUser);
 
 router
+    .route('/bulk-update')
+    .patch(usersController.bulkUpdate);
+
+router
     .route('/delete/:id')
     .delete(usersController.deleteUser);
 
