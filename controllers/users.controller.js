@@ -117,3 +117,23 @@ module.exports.updateUser = (req, res) => {
     }
 }
 
+module.exports.deleteUser = (req, res) => {
+    const { id } = req.params;
+    const selectedUser = users.find(user => user.id === Number(id));
+    if (selectedUser) {
+        const restUser = users.filter(user => user.id !== Number(id));
+        res.status(200).send({
+            success: true,
+            message: `User deleted successfully!`,
+            deletedUser: selectedUser,
+            data: restUser,
+        });
+    } else {
+        res.status(500).send({
+            success: false,
+            error: "No user found.",
+        })
+    }
+
+}
+
